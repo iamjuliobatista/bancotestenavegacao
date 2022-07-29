@@ -22,6 +22,7 @@ public class ContaCorrente extends Conta {
 	
 	public void pedirTalao() {
 		Scanner imput1 = new Scanner(System.in);
+		System.out.println();
 		System.out.println("É possivel solicitar até três cheques, cada um no valor de 30,00");
 		
 		do {
@@ -35,8 +36,8 @@ public class ContaCorrente extends Conta {
 				if (getSaldo() >= 30) {
 					debito(30);
 					contadorTalao += 1;
-					System.out.println("Voce solicitou cheque...");
-					System.out.println("Saldo atual: " + getSaldo());
+					System.out.println("Voce solicitou cheque");
+					System.out.println("Quantidades de cheques solicitados: " + contadorTalao);
 					} else {
 						System.out.println("Saldo insuficiente!");
 					}
@@ -44,11 +45,16 @@ public class ContaCorrente extends Conta {
 				System.out.println("Obrigado por utilizar o banco 'nome do banco'!");
 				System.out.println("Saindo...");	
 				System.exit(0);
-				
 			}
 				
-			} else if (resposta != 1 || resposta != 2) {
+			}
+			if (resposta != 1 && resposta != 2) {
 				System.out.println("Resposta inválida, tente novamente!");
+			}
+			if (contadorTalao == 3) {
+			System.out.println("Obrigado por utilizar o banco 'nome do banco'!");
+			System.out.println("Saindo...");	
+			System.exit(0);
 			}
 			
 		} while (resposta != 2 && contadorTalao < 3);

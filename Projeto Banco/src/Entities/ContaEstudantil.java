@@ -158,7 +158,6 @@ public void cancelar() {
 
 public ContaEstudantil(int numero, String cpf) {
 	super(numero, cpf);
-	/*
 	Scanner sc = new Scanner (System.in);
 	System.out.println("===============================");
 	System.out.println("       Banco Nirvana G6");
@@ -188,7 +187,7 @@ public ContaEstudantil(int numero, String cpf) {
 	sc.close();
 	
 	
-*/		
+	
 }
 	
 }
